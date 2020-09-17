@@ -7,12 +7,10 @@ module.exports = function transform(arr) {
   for(var i = 0; i < arr.length; ++i) {
 		switch (arr[i]) {	 
 		  case "--discard-next":
-		    if(i < arr.length - 1) {
 		  		i++;
-		    }
-		    break;
+		    	break;
 		  case "--discard-prev":
-		    if(answer.length) {
+		    if(i > 0 && arr[i - 2] !== '--discard-next') {
 		    	answer.pop();
 		    }
 		    break;
@@ -22,7 +20,7 @@ module.exports = function transform(arr) {
 		    }
 		    break;
 		  case "--double-prev":
-		    if(i > 0) {
+		    if(i > 0 && arr[i - 2] !== '--discard-next') {
 		    	answer.push(arr[i - 1]);
 		    }
 		    break;
