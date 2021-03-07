@@ -2,7 +2,7 @@ module.exports = function repeater( str, options ) {
 
     str = "" + str;  
     var separator = options.separator ? options.separator : "+";
-    var additionSeparator = options.additionSeparator ? options.additionSeparator : "+";
+    var additionSeparator = options.additionSeparator ? options.additionSeparator : "|";
 
 
     if(options.addition !== undefined) {
